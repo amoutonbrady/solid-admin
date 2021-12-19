@@ -6,8 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "format": "prettier --write \"**/*.{js,ts,json,tsx,jsx,css,html,md}\"",
-    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install"
+    "format": "prettier --write \"**/*.{js,ts,json,tsx,jsx,css,html,md}\""
   },
   "// TODO: Add a proper license?": "",
   "license": "",
