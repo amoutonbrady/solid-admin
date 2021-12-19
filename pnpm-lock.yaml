@@ -4,6 +4,8 @@ specifiers:
   '@types/node': ^17.0.0
   autoprefixer: ^10.4.0
   postcss: ^8.4.5
+  solid-app-router: ^0.1.14
+  solid-heroicons: ^1.1.0
   solid-js: ^1.2.6
   tailwindcss: ^3.0.7
   typescript: ^4.5.4
@@ -11,6 +13,8 @@ specifiers:
   vite-plugin-solid: ^2.1.4
 
 dependencies:
+  solid-app-router: 0.1.14_solid-js@1.2.6
+  solid-heroicons: 1.1.0
   solid-js: 1.2.6
 
 devDependencies:
@@ -1193,6 +1197,20 @@ packages:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
     dev: true
+
+  /solid-app-router/0.1.14_solid-js@1.2.6:
+    resolution: {integrity: sha512-fnX+jCB5sDMbjq3od9qGtQNdlvHP2c6DG5STvMHVXyNuSEN+MdO7WJtZ58OpVpq6zWS4FYeYAh7NMEa7C2CcOA==}
+    peerDependencies:
+      solid-js: ^1.0.0
+    dependencies:
+      solid-js: 1.2.6
+    dev: false
+
+  /solid-heroicons/1.1.0:
+    resolution: {integrity: sha512-uYSAB67qaJa+S47TgWHyhVvvZJ/5iiFUOyk/+oeChO9thEcTbP+poRHy+HDaGfmKxZYFz2+TgzG0rqZ9DR/BUg==}
+    dependencies:
+      solid-js: 1.2.6
+    dev: false
 
   /solid-js/1.2.6:
     resolution: {integrity: sha512-NvPHJ5Vj5f+ZJWIioickrC55seovSkDtm5NzSpnoUk3z4tATv0STpy5iuGNEn51ZORUcwpZzrMAtOCGziXU1XA==}

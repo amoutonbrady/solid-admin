@@ -1,6 +1,18 @@
-import "@/assets/css/main.css";
+import '@/assets/css/main.css';
 
-import { render } from "solid-js/web";
-import App from "@/App";
+import { render } from 'solid-js/web';
+import { Router } from 'solid-app-router';
 
-render(() => <App />, document.getElementById("root") as HTMLElement);
+import App from '@/app';
+import { AuthProvider } from '@/stores/auth';
+
+render(
+  () => (
+    <Router>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </Router>
+  ),
+  document.getElementById('root') as HTMLElement,
+);
