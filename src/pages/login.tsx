@@ -31,17 +31,17 @@ const LoginPage: Component = () => {
   return (
     <main class="flex flex-1 items-center justify-center">
       <Form<LoginForm> onFormSubmit={login} class="p-10 shadow-sm rounded bg-white flex flex-col">
-        <h1 class="text-3xl">Connexion</h1>
-        <p class="text-gray-700 mt-2">Connectez-vous avec les identifiants fournis par email.</p>
+        <h1 class="text-3xl">Sign In</h1>
+        <p class="text-gray-700 mt-2">You can sign in with any fake information.</p>
 
         <fieldset class="flex flex-col space-y-4 mt-4">
-          <Input name="login" loading={loading()} label="Nom d'utilisateur" placeholder="..." />
+          <Input name="login" loading={loading()} label="Login" placeholder="Enter your login..." />
           <Input
             name="password"
             loading={loading()}
-            label="Mot de passe"
+            label="Password"
             type="password"
-            placeholder="..."
+            placeholder="Enter your password..."
           />
         </fieldset>
 
