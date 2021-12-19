@@ -4,6 +4,12 @@ import { mergeClasses, MergeClassesType } from '@/utils';
 type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement> & {
   class?: MergeClassesType;
   loading?: boolean;
+  variant?: 'default' | 'danger';
+};
+
+const variants = {
+  default: 'bg-blue-800 text-blue-50',
+  danger: 'bg-red-800 text-red-50',
 };
 
 const Button: Component<ButtonProps> = (props) => {
@@ -11,18 +17,20 @@ const Button: Component<ButtonProps> = (props) => {
     {
       type: 'button',
       class: '',
+      variant: 'default',
     },
     props,
   );
-  const [internal, external] = splitProps(mergedProps, ['class', 'disabled']);
+  const [internal, external] = splitProps(mergedProps, ['class', 'disabled', 'variant']);
 
   return (
     <button
       {...external}
       disabled={props.loading || internal.disabled}
       class={mergeClasses([
-        'disabled:bg-opacity-60 disabled:text-opacity-90 disabled:cursor-wait px-3 py-2 rounded flex items-center space-x-3 bg-blue-800 text-blue-50 text-sm uppercase tracking-wide font-semibold',
+        'disabled:bg-opacity-60 disabled:text-opacity-90 disabled:cursor-wait px-3 py-2 rounded flex items-center space-x-3 text-sm uppercase tracking-wide font-semibold',
         internal.class,
+        variants[internal.variant],
       ])}
     >
       <span>{props.children}</span>

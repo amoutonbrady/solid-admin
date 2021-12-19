@@ -6,12 +6,14 @@ import { Icon } from 'solid-heroicons';
 import { bookmark } from 'solid-heroicons/outline';
 
 import { useAuth } from '@/stores/auth';
-import { Sidebar, SidebarLink, SidebarCategory, SidebarDropdown } from '@/components';
+import { Sidebar, SidebarLink, SidebarCategory, SidebarDropdown, Button } from '@/components';
 
 import LoginPage from '@/pages/login';
 import HomePage from '@/pages/home';
 
 const Layout: Component = (props) => {
+  const [_, actions] = useAuth();
+
   return (
     <div class="flex">
       <Sidebar header="Solid Admin" footer={<span class="text-sm text-gray-300">v{version}</span>}>
@@ -34,7 +36,14 @@ const Layout: Component = (props) => {
         </SidebarCategory>
       </Sidebar>
 
-      <main class="flex-1 overflow-auto h-screen px-4">{props.children}</main>
+      <div class="h-full flex flex-col flex-1">
+        <header class="h-16 bg-white shadow flex px-4 items-center">
+          <Button variant="danger" onClick={actions.logout} class="ml-auto">
+            Log Out
+          </Button>
+        </header>
+        <main class="flex-1 overflow-auto p-4">{props.children}</main>
+      </div>
     </div>
   );
 };
