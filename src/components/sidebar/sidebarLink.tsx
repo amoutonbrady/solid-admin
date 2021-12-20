@@ -1,11 +1,17 @@
-import { Component, JSX, splitProps, Show } from 'solid-js';
+import { Component, JSX, splitProps, Show, Switch, Match } from 'solid-js';
 import { NavLink, NavLinkProps } from 'solid-app-router';
 import { mergeClasses } from '@/utils';
+import Badge from '../badge';
+
+interface SidebarBadgeConfig {
+  label: string;
+  variant?: 'default' | 'danger';
+}
 
 interface SidebarLinkProps extends NavLinkProps {
   label: string | JSX.Element;
   icon?: JSX.Element;
-  badge?: string | JSX.Element;
+  badge?: SidebarBadgeConfig;
 }
 
 const SidebarLink: Component<SidebarLinkProps> = (props) => {
@@ -28,6 +34,12 @@ const SidebarLink: Component<SidebarLinkProps> = (props) => {
           }
         >
           {internal.label}
+        </Show>
+
+        <Show when={internal.badge}>
+          <Badge variant={internal.badge.variant} class="ml-auto">
+            {internal.badge.label}
+          </Badge>
         </Show>
       </NavLink>
     </li>

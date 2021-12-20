@@ -17,8 +17,17 @@ const Layout: Component = (props) => {
   return (
     <div class="flex">
       <Sidebar header="Solid Admin" footer={<span class="text-sm text-gray-300">v{version}</span>}>
-        <SidebarLink label="Link with icon" href="/" icon={<Icon path={bookmark} class="h-6" />} />
-        <SidebarLink label="Link with no icon" href="/" />
+        <SidebarLink
+          label="Link with icon"
+          href="/"
+          icon={<Icon path={bookmark} class="h-6" />}
+          badge={{ label: 'NEW' }}
+        />
+        <SidebarLink
+          label="Link with no icon"
+          href="/"
+          badge={{ label: 'PRO', variant: 'danger' }}
+        />
 
         <SidebarCategory label="Sidebar title">
           <SidebarLink label="Buttons" href="/" icon={<Icon path={bookmark} class="h-6" />} />

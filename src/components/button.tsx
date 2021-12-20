@@ -7,7 +7,7 @@ type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'default' | 'danger';
 };
 
-const variants = {
+export const variants = {
   default: 'bg-blue-800 text-blue-50',
   danger: 'bg-red-800 text-red-50',
 };

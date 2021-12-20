@@ -5,7 +5,7 @@ const HomePage: Component = () => {
   return (
     <div class="grid gap-4 w-full">
       <Pane header="A pane">Hello world!</Pane>
-      <Pane header="A pane that can be collapsed" collapsible open>
+      <Pane header="A pane that can be collapsed" collapsible>
         Hello world!
       </Pane>
     </div>
