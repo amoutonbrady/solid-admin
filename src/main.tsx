@@ -1,3 +1,4 @@
+import '@/assets/css/inter.css';
 import '@/assets/css/main.css';
 
 import { render } from 'solid-js/web';
