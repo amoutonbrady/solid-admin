@@ -13,8 +13,6 @@ const SidebarDropdown: Component<SidebarDropdownProps> = (props) => {
   return (
     <li>
       <details class="group">
-        {/* TODO: Make group-open work */}
-        {/* https://github.com/tailwindlabs/tailwindcss/pull/4627 */}
         <summary class="flex items-center py-3 px-4 text-gray-400 hover:text-gray-100 hover:bg-white/5 group-open:bg-gray-700 cursor-pointer">
           <Show when={props?.icon}>{props.icon}</Show>
 
