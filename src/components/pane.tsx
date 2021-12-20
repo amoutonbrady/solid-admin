@@ -1,6 +1,8 @@
 import { Component, JSX, Show, mergeProps, splitProps } from 'solid-js';
 import { mergeClasses, MergeClassesType, randomId } from '@/utils';
 import { Dynamic } from 'solid-js/web';
+import { Icon } from 'solid-heroicons';
+import { chevronDown } from 'solid-heroicons/outline';
 
 const Pane: Component<{
   header?: string | JSX.Element;
@@ -32,7 +34,7 @@ const Pane: Component<{
       <Show when={props.header}>
         <Dynamic
           component={internal.collapsible ? 'summary' : 'header'}
-          class="bg-gray-50 border-b py-2 px-4"
+          class="bg-gray-50 border-b py-2 px-4 flex items-center justify-between"
           classList={{ 'cursor-pointer': internal.collapsible }}
         >
           <Show
@@ -40,6 +42,10 @@ const Pane: Component<{
             fallback={<span class="font-medium">{props.header}</span>}
           >
             {props.header}
+          </Show>
+
+          <Show when={internal.collapsible}>
+            <Icon path={chevronDown} class="h-4 ml-auto" />
           </Show>
         </Dynamic>
       </Show>
