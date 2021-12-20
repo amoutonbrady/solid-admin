@@ -1,3 +1,9 @@
+# ⚠️ THIS IS STILL A WIP, DO NOT USE YET ⚠️
+
+ℹ️ I'm open to contributions and/or suggestions ℹ️
+
+---
+
 # solid-admin
 
 A simple solid admin template
