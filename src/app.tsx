@@ -6,7 +6,14 @@ import { Icon } from 'solid-heroicons';
 import { bookmark } from 'solid-heroicons/outline';
 
 import { useAuth } from '@/stores/auth';
-import { Sidebar, SidebarLink, SidebarCategory, SidebarDropdown, Button } from '@/components';
+import {
+  Sidebar,
+  SidebarLink,
+  SidebarCategory,
+  SidebarDropdown,
+  Button,
+  Modal,
+} from '@/components';
 
 import LoginPage from '@/pages/login';
 import HomePage from '@/pages/home';
@@ -71,13 +78,15 @@ const Protected: Component = () => {
 
 const App: Component = () => {
   return (
-    <Routes>
-      <Route path="" component={Protected}>
-        <Route path="/" component={HomePage} />
-      </Route>
+    <>
+      <Routes>
+        <Route path="" component={Protected}>
+          <Route path="/" component={HomePage} />
+        </Route>
 
-      <Route path="/login" component={LoginPage} />
-    </Routes>
+        <Route path="/login" component={LoginPage} />
+      </Routes>
+    </>
   );
 };
 
