@@ -5,11 +5,13 @@ type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement> & {
   class?: MergeClassesType;
   loading?: boolean;
   variant?: 'default' | 'danger';
+  isQuiet?: boolean;
 };
 
 export const variants = {
   default: 'bg-blue-800 text-blue-50',
   danger: 'bg-red-800 text-red-50',
+  'quiet-default': 'text-blue-800 hover:bg-blue-800/5',
 };
 
 const Button: Component<ButtonProps> = (props) => {
@@ -21,7 +23,7 @@ const Button: Component<ButtonProps> = (props) => {
     },
     props,
   );
-  const [internal, external] = splitProps(mergedProps, ['class', 'disabled', 'variant']);
+  const [internal, external] = splitProps(mergedProps, ['class', 'disabled', 'variant', 'isQuiet']);
 
   return (
     <button
@@ -30,7 +32,7 @@ const Button: Component<ButtonProps> = (props) => {
       class={mergeClasses([
         'disabled:bg-opacity-60 disabled:text-opacity-90 disabled:cursor-wait px-3 py-2 rounded flex items-center space-x-3 text-sm uppercase tracking-wide font-semibold',
         internal.class,
-        variants[internal.variant],
+        variants[(internal.isQuiet ? 'quiet-' : '') + internal.variant],
       ])}
     >
       <span>{props.children}</span>
